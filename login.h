@@ -4,8 +4,10 @@
 #include<QMainWindow>
 #include<QtSql>
 #include<QDebug>
+#include<QMessageBox>
 #include<QFileInfo>
 #include <QDialog>
+#include"mainwindow.h"
 
 namespace Ui {
 class login;
@@ -18,6 +20,13 @@ class login : public QDialog
 public:
     explicit login(QWidget *parent = nullptr);
     ~login();
+
+private slots:
+
+    void on_LoginPushButton_clicked();
+
+
+    void on_LoginClearButton_clicked();
 
 private:
     Ui::login *ui;
