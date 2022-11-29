@@ -12,7 +12,7 @@ public:
     ~DBManager();
 
     // different functions
-    QSqlQueryModel *ShowInfoForOneItem(QString item);
+
 private:
     QSqlDatabase m_database;
 };

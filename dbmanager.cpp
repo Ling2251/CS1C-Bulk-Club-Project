@@ -14,21 +14,10 @@ DBManager::DBManager()
     }
 }
 
-DBManager::~DBManager(){}
-
-QSqlQueryModel *DBManager::ShowInfoForOneItem(QString item)
-{
-    QSqlQueryModel *model = new QSqlQueryModel();
-    QSqlQuery qry;
-
-    qry.prepare("SELECT item, quantity as \"total quantity sold\", \"$\" || printf(\"%.2f\",(price * quantity)*1.0775) "
-                "as \"Total revenue\" from inventory where item = \""+item+"\";");
-
-     if(!qry.exec())
-     {
-         qDebug() <<"error Loading values to db" << endl;
-     }
-
-    model->setQuery(qry);
-    return model;
+DBManager::~DBManager(){
+    //close database
+    m_database.close();
+    qDebug() << "database connection closed\n";
 }
+
+

@@ -11,16 +11,19 @@ SOURCES += \
     dbmanager.cpp \
     login.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    memberpurchase.cpp
 
 HEADERS += \
     dbmanager.h \
     login.h \
-    mainwindow.h
+    mainwindow.h \
+    memberpurchase.h
 
 FORMS += \
     login.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    memberpurchase.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
