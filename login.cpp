@@ -7,19 +7,6 @@ login::login(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    /*QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("C:/Users/78418/CS1C-Bulk-Club-Project/Database.db");
-
-    if(!mydb.open())
-    {
-        ui->label->setText("Fail to open the database");
-    }
-    else
-    {
-        ui->label->setText("connected..........");
-    }*/
-
-
 
 }
 
@@ -27,3 +14,30 @@ login::~login()
 {
     delete ui;
 }
+
+
+
+void login::on_LoginPushButton_clicked()
+{
+    QString userLine = ui->UserLine->text();
+    QString passwordLine = ui->PasswordLine->text();
+
+    if(userLine == "CCTV" && passwordLine == "12345")
+    {
+        qDebug() << "Log in!";
+        QMainWindow w;
+        w.show();
+    }
+    else
+    {
+        QMessageBox::warning(this, "Login", "Username or password is not correct");
+    }
+}
+
+
+void login::on_LoginClearButton_clicked()
+{
+    ui->UserLine->clear();
+    ui->PasswordLine->clear();
+}
+
