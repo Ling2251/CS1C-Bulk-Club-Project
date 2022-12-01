@@ -30,6 +30,7 @@ private slots:
 
 private:
     Ui::login *ui;
+    QMainWindow w;
 };
 
 #endif // LOGIN_H

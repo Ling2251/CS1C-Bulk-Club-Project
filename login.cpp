@@ -6,16 +6,12 @@ login::login(QWidget *parent) :
     ui(new Ui::login)
 {
     ui->setupUi(this);
-
-
 }
 
 login::~login()
 {
     delete ui;
 }
-
-
 
 void login::on_LoginPushButton_clicked()
 {
@@ -25,7 +21,6 @@ void login::on_LoginPushButton_clicked()
     if(userLine == "CCTV" && passwordLine == "12345")
     {
         qDebug() << "Log in!";
-        QMainWindow w;
         w.show();
     }
     else

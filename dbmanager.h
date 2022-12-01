@@ -12,7 +12,7 @@ public:
     ~DBManager();
 
     // different functions
-
+    QSqlQueryModel *loadEntries();
 private:
     QSqlDatabase m_database;
 };
