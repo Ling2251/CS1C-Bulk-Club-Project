@@ -16,6 +16,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     memberpurchase.cpp \
+    membershipchange.cpp \
     storemanager.cpp
 
 HEADERS += \
@@ -26,6 +27,7 @@ HEADERS += \
     login.h \
     mainwindow.h \
     memberpurchase.h \
+    membershipchange.h \
     storemanager.h
 
 FORMS += \
@@ -35,6 +37,7 @@ FORMS += \
     login.ui \
     mainwindow.ui \
     memberpurchase.ui \
+    membershipchange.ui \
     storemanager.ui
 
 # Default rules for deployment.

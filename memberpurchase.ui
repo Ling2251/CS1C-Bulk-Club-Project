@@ -298,7 +298,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="BackToMainButton">
+  <widget class="QPushButton" name="close">
    <property name="geometry">
     <rect>
      <x>290</x>
@@ -308,10 +308,27 @@
     </rect>
    </property>
    <property name="text">
-    <string>Back to Main</string>
+    <string>Close</string>
    </property>
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>close</sender>
+   <signal>clicked()</signal>
+   <receiver>memberPurchase</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>354</x>
+     <y>339</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>481</x>
+     <y>260</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

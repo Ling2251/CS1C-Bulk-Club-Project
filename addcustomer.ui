@@ -245,7 +245,7 @@
     <string>Add customer</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="AddBackButton">
+  <widget class="QPushButton" name="Close">
    <property name="geometry">
     <rect>
      <x>100</x>
@@ -262,7 +262,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Back</string>
+    <string>Close</string>
    </property>
   </widget>
   <widget class="QPushButton" name="AddCustomerButton_2">
@@ -287,5 +287,22 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>Close</sender>
+   <signal>clicked()</signal>
+   <receiver>addCustomer</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>200</x>
+     <y>372</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>380</x>
+     <y>29</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -176,7 +176,7 @@
     <string>Delete Item</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="BackButton">
+  <widget class="QPushButton" name="Close">
    <property name="geometry">
     <rect>
      <x>110</x>
@@ -194,10 +194,27 @@
     </font>
    </property>
    <property name="text">
-    <string>Back To Mian</string>
+    <string>Close</string>
    </property>
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>Close</sender>
+   <signal>clicked()</signal>
+   <receiver>addItme</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>189</x>
+     <y>324</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>311</x>
+     <y>17</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
