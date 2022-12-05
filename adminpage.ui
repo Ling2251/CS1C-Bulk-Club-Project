@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>624</width>
-    <height>350</height>
+    <width>706</width>
+    <height>485</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="TitleLabel">
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -38,11 +38,11 @@
     <string>Welcom to Admin Page</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="AddOrDeleteCustomerButton">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>90</y>
+     <y>110</y>
      <width>191</width>
      <height>41</height>
     </rect>
@@ -58,11 +58,11 @@
     <string>Add Or Delete Customer</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="ChangeMemberShipButton">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>150</y>
+     <y>170</y>
      <width>191</width>
      <height>41</height>
     </rect>
@@ -78,11 +78,11 @@
     <string>Change MemberShip</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="AddOrDeleteItemButton">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>210</y>
+     <y>230</y>
      <width>191</width>
      <height>41</height>
     </rect>
@@ -98,11 +98,11 @@
     <string>Add or delete Item</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="CreatePurchaseButton">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>270</y>
+     <y>290</y>
      <width>191</width>
      <height>41</height>
     </rect>
@@ -118,17 +118,17 @@
     <string>Create purchase</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="tableWidget">
+  <widget class="QTableWidget" name="VeiwCustomerWidget">
    <property name="geometry">
     <rect>
      <x>220</x>
      <y>80</y>
-     <width>391</width>
-     <height>231</height>
+     <width>461</width>
+     <height>321</height>
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
+  <widget class="QPushButton" name="ViewCutomersButton">
    <property name="geometry">
     <rect>
      <x>500</x>
