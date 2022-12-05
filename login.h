@@ -8,6 +8,8 @@
 #include<QFileInfo>
 #include <QDialog>
 #include"mainwindow.h"
+#include "adminpage.h"
+#include "storemanager.h"
 
 namespace Ui {
 class login;
@@ -25,12 +27,13 @@ private slots:
 
     void on_LoginPushButton_clicked();
 
-
     void on_LoginClearButton_clicked();
 
 private:
     Ui::login *ui;
     QMainWindow w;
+    adminpage adminUi;
+    storemanager storemanagerUi;
 };
 
 #endif // LOGIN_H

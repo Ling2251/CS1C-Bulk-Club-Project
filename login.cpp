@@ -18,10 +18,14 @@ void login::on_LoginPushButton_clicked()
     QString userLine = ui->UserLine->text();
     QString passwordLine = ui->PasswordLine->text();
 
-    if(userLine == "CCTV" && passwordLine == "12345")
+    if(userLine == "admin" && passwordLine == "12345")
     {
-        qDebug() << "Log in!";
-        w.show();
+        qDebug() << "Log in as admin!";
+        adminUi.show();
+    }
+    else if(userLine == "storemanager" && passwordLine == "12345"){
+        qDebug() << "Log in as Store manager!";
+        storemanagerUi.show();
     }
     else
     {
