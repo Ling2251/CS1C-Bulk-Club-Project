@@ -26,10 +26,7 @@ void login::on_LoginPushButton_clicked()
         qDebug() << "Successfully logged in as Admin!";
         adminUi.show();
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> e914ac1a629efe8918e792f95973a7371e432376
     else if(userLine == "manager" && passwordLine == "12345"){
 
         qDebug() << "Log in as Store manager!";
