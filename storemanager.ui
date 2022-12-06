@@ -57,7 +57,7 @@
     <string>Daily Report</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="salesReporButton">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -79,7 +79,7 @@
     <string>Sales Report</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="TotalReenueButton">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -101,7 +101,7 @@
     <string>Total Revenue</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
+  <widget class="QPushButton" name="TotalPurchasesButton">
    <property name="geometry">
     <rect>
      <x>50</x>
@@ -123,7 +123,7 @@
     <string>Total Purchases</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="rebateButton">
    <property name="geometry">
     <rect>
      <x>230</x>
@@ -142,7 +142,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Rebat To Member</string>
+    <string>Rebate To Member</string>
    </property>
   </widget>
  </widget>
