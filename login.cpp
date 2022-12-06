@@ -6,6 +6,9 @@ login::login(QWidget *parent) :
     ui(new Ui::login)
 {
     ui->setupUi(this);
+
+    QPixmap pix("C:/Users/78418/Desktop/key.png");
+    ui->label_loginImage->setPixmap(pix);
 }
 
 login::~login()
