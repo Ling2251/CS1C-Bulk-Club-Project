@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 5.0.2, 2022-12-05T19:49:38. -->
+<!-- Written by QtCreator 5.0.2, 2022-12-05T20:12:39. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{ca1cee9c-a205-4a8c-9b1e-11479f295893}</value>
+  <value type="QByteArray">{39b8b622-2b45-41de-948b-7f7ae4382051}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -70,9 +70,7 @@
    <valuemap type="QVariantMap" key="AutoTest.CheckStates"/>
    <value type="int" key="AutoTest.RunAfterBuild">0</value>
    <value type="bool" key="AutoTest.UseGlobal">true</value>
-   <valuelist type="QVariantList" key="ClangCodeModel.CustomCommandLineKey">
-    <value type="QString">-fno-delayed-template-parsing</value>
-   </valuelist>
+   <valuelist type="QVariantList" key="ClangCodeModel.CustomCommandLineKey"/>
    <value type="bool" key="ClangCodeModel.UseGlobalConfig">true</value>
    <value type="QString" key="ClangCodeModel.WarningConfigId">Builtin.BuildSystem</value>
    <valuemap type="QVariantMap" key="ClangTools">
@@ -91,16 +89,16 @@
   <variable>ProjectExplorer.Project.Target.0</variable>
   <valuemap type="QVariantMap">
    <value type="QString" key="DeviceType">Desktop</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop (x86-windows-msvc2017-pe-32bit)</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop (x86-windows-msvc2017-pe-32bit)</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{7755751a-2d08-403d-9e40-7ec3f9dcfa39}</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 5.12.12 clang 64bit</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 5.12.12 clang 64bit</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.qt5.51212.clang_64_kit</value>
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
     <value type="int" key="EnableQmlDebugging">0</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\78418\build-CS1C-BuliClub-Desktop_x86_windows_msvc2017_pe_32bit-Debug</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/78418/build-CS1C-BuliClub-Desktop_x86_windows_msvc2017_pe_32bit-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/Users/souzenkhan/Desktop/build-CS1C-BuliClub-Desktop_Qt_5_12_12_clang_64bit-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/Users/souzenkhan/Desktop/build-CS1C-BuliClub-Desktop_Qt_5_12_12_clang_64bit-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -137,8 +135,8 @@
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\78418\build-CS1C-BuliClub-Desktop_x86_windows_msvc2017_pe_32bit-Release</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/78418/build-CS1C-BuliClub-Desktop_x86_windows_msvc2017_pe_32bit-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/Users/souzenkhan/Desktop/build-CS1C-BuliClub-Desktop_Qt_5_12_12_clang_64bit-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/Users/souzenkhan/Desktop/build-CS1C-BuliClub-Desktop_Qt_5_12_12_clang_64bit-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -177,8 +175,8 @@
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
     <value type="int" key="EnableQmlDebugging">0</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\78418\build-CS1C-BuliClub-Desktop_x86_windows_msvc2017_pe_32bit-Profile</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/78418/build-CS1C-BuliClub-Desktop_x86_windows_msvc2017_pe_32bit-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/Users/souzenkhan/Desktop/build-CS1C-BuliClub-Desktop_Qt_5_12_12_clang_64bit-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/Users/souzenkhan/Desktop/build-CS1C-BuliClub-Desktop_Qt_5_12_12_clang_64bit-Profile</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -237,12 +235,14 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.CustomExecutableRunConfiguration</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/Users/souzenkhan/Desktop/CS1C-Bulk-Club-Project/CS1C-BuliClub.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/Users/souzenkhan/Desktop/CS1C-Bulk-Club-Project/CS1C-BuliClub.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
+    <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/Users/souzenkhan/Desktop/build-CS1C-BuliClub-Desktop_Qt_5_12_12_clang_64bit-Debug/CS1C-BuliClub.app/Contents/MacOS</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

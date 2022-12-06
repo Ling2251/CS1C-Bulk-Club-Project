@@ -48,13 +48,13 @@ void membershipChange::on_ChangeButton_clicked()
     // error message if the item can't be updataed due to the data base
     if(qry.exec())
     {
-        QMessageBox::about(this, "", "Membership has change,double check if error occured");
+        QMessageBox::about(this, "", "Membership has changed,please check if an error has occured");
         // close the connection to data base
         conn.connClose();
     }
     else
     {
-        QMessageBox::about(this, "Error", "Database not found double check path to database");
+        QMessageBox::about(this, "Error", "Database not found, please check path to database");
     }
 
 }
