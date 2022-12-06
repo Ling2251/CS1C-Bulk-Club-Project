@@ -19,6 +19,9 @@ public:
     explicit addCustomer(QWidget *parent = nullptr);
     ~addCustomer();
 
+private slots:
+    void on_AddCustomerButton_clicked();
+
 private:
     Ui::addCustomer *ui;
 };
