@@ -35,7 +35,7 @@
     <string>Welcom to Store Manager Page</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="DailtReportButton">
    <property name="geometry">
     <rect>
      <x>50</x>

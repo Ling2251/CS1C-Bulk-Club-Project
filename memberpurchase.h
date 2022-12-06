@@ -2,6 +2,10 @@
 #define MEMBERPURCHASE_H
 
 #include <QDialog>
+#include <QtSql>
+#include <QSqlQuery>
+#include <QMessageBox>
+#include "dbmanager.h"
 
 namespace Ui {
 class memberPurchase;
