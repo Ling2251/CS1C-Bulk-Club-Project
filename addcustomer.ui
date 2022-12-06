@@ -126,16 +126,6 @@
     <string>Expiration Date  :</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="CustomerType">
-   <property name="geometry">
-    <rect>
-     <x>170</x>
-     <y>180</y>
-     <width>151</width>
-     <height>31</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
@@ -152,7 +142,7 @@
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>220</x>
      <y>220</y>
      <width>41</width>
      <height>31</height>
@@ -165,7 +155,7 @@
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>270</x>
      <y>220</y>
      <width>41</width>
      <height>31</height>
@@ -185,43 +175,13 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="CustomerID">
+  <widget class="QLineEdit" name="CutpmerID">
    <property name="geometry">
     <rect>
      <x>170</x>
      <y>140</y>
      <width>151</width>
      <height>24</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="MonthTime">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>250</y>
-     <width>46</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="DateTime">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>250</y>
-     <width>46</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QSpinBox" name="YearTime">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>250</y>
-     <width>46</width>
-     <height>25</height>
     </rect>
    </property>
   </widget>
@@ -265,7 +225,7 @@
     <string>Close</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="AddCustomerButton_2">
+  <widget class="QPushButton" name="DeleteCustomerButton">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -283,6 +243,46 @@
    </property>
    <property name="text">
     <string>Delete customer</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="CustomerType">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>180</y>
+     <width>151</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Month">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>250</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Day">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>250</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Year">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>250</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
    </property>
   </widget>
  </widget>

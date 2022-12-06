@@ -27,7 +27,6 @@ void login::on_LoginPushButton_clicked()
         adminUi.show();
     }
     else if(userLine == "manager" && passwordLine == "12345"){
-
         qDebug() << "Log in as Store manager!";
 
         storemanagerUi.show();
