@@ -124,16 +124,6 @@
     <string>Quantity     :</string>
    </property>
   </widget>
-  <widget class="QSpinBox" name="ItemNum">
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>180</y>
-     <width>91</width>
-     <height>25</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="AddButton">
    <property name="geometry">
     <rect>
@@ -195,6 +185,16 @@
    </property>
    <property name="text">
     <string>Close</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="ItemNumber">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>180</y>
+     <width>91</width>
+     <height>24</height>
+    </rect>
    </property>
   </widget>
  </widget>

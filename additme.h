@@ -5,6 +5,7 @@
 #include "dbmanager.h"
 #include <QtSql>
 #include <QSqlQuery>
+#include <QMessageBox>
 
 namespace Ui {
 class addItme;
@@ -17,7 +18,6 @@ class addItme : public QDialog
 public:
     explicit addItme(QWidget *parent = nullptr);
     ~addItme();
-
 private slots:
     void on_AddButton_clicked();
 
