@@ -15,6 +15,7 @@ SOURCES += \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
+    managerdailyreport.cpp \
     memberpurchase.cpp \
     membershipchange.cpp \
     storemanager.cpp
@@ -26,6 +27,7 @@ HEADERS += \
     dbmanager.h \
     login.h \
     mainwindow.h \
+    managerdailyreport.h \
     memberpurchase.h \
     membershipchange.h \
     storemanager.h
@@ -36,6 +38,7 @@ FORMS += \
     adminpage.ui \
     login.ui \
     mainwindow.ui \
+    managerdailyreport.ui \
     memberpurchase.ui \
     membershipchange.ui \
     storemanager.ui

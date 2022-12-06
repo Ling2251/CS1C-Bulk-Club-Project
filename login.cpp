@@ -7,7 +7,7 @@ login::login(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QPixmap pix("C:/Users/78418/Desktop/key.png");
+    QPixmap pix(":/image/key.png");
     ui->label_loginImage->setPixmap(pix);
 }
 
@@ -26,8 +26,12 @@ void login::on_LoginPushButton_clicked()
         qDebug() << "Successfully logged in as Admin!";
         adminUi.show();
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e914ac1a629efe8918e792f95973a7371e432376
     else if(userLine == "manager" && passwordLine == "12345"){
+
         qDebug() << "Log in as Store manager!";
 
         storemanagerUi.show();
