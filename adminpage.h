@@ -8,6 +8,7 @@
 #include "memberpurchase.h"
 #include "membershipchange.h"
 
+
 namespace Ui {
 class adminpage;
 }
