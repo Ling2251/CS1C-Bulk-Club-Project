@@ -20,11 +20,11 @@ void login::on_LoginPushButton_clicked()
 
     if(userLine == "admin" && passwordLine == "12345")
     {
-        qDebug() << "Log in as admin!";
+        qDebug() << "Successfully logged in as Admin!";
         adminUi.show();
     }
     else if(userLine == "storemanager" && passwordLine == "12345"){
-        qDebug() << "Log in as Store manager!";
+        qDebug() << "Successfully logged in as Store Manager!";
         storemanagerUi.show();
     }
     else
