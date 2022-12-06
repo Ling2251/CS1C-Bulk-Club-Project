@@ -47,7 +47,7 @@ void addItme::on_AddButton_clicked()
     // error message if the item can't be added due to the data base
     if(qry.exec())
     {
-        QMessageBox::about(this, "", "The item was added. double check if error occured");
+        QMessageBox::about(this, "", "The item was added, double check if error occured");
         // close the connection to data base
         conn.connClose();
     }
