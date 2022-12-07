@@ -61,6 +61,10 @@ void addItme::on_AddButton_clicked()
 
 void addItme::on_DeleteButton_clicked()
 {
+    /*
+     * Not working ad it should for example if theres an item with 88 quantity, you cant take just 2 off and
+     * it would update to 86, you have to take the whole amount off, still needs to be tweaked
+     */
 
     // opned the data base
     DBManager conn;
