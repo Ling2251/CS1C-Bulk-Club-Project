@@ -31,6 +31,8 @@ private slots:
 
     void on_ChangeMemberShipButton_clicked();
 
+    void on_ViewCutomersButton_clicked();
+
 private:
     Ui::adminpage *ui;
     addItme addItemUi;

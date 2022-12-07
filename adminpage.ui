@@ -118,22 +118,12 @@
     <string>Create purchase</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="VeiwCustomerWidget">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>80</y>
-     <width>461</width>
-     <height>321</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QPushButton" name="ViewCutomersButton">
    <property name="geometry">
     <rect>
-     <x>500</x>
+     <x>480</x>
      <y>40</y>
-     <width>111</width>
+     <width>131</width>
      <height>41</height>
     </rect>
    </property>
@@ -152,6 +142,16 @@
    </property>
    <property name="text">
     <string>[+]Status</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>255</x>
+     <y>101</y>
+     <width>411</width>
+     <height>341</height>
+    </rect>
    </property>
   </widget>
  </widget>
