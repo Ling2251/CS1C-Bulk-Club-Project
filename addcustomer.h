@@ -22,6 +22,8 @@ public:
 private slots:
     void on_AddCustomerButton_clicked();
 
+    void on_DeleteCustomerButton_clicked();
+
 private:
     Ui::addCustomer *ui;
 };

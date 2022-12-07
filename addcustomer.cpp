@@ -61,3 +61,40 @@ void addCustomer::on_AddCustomerButton_clicked()
     }
 }
 
+
+
+void addCustomer::on_DeleteCustomerButton_clicked()
+{
+    //NOTE ONLY NAME IS NEEDED TO DELETE THE MEMBER
+
+
+    //opening data base
+    DBManager conn;
+    if(!conn.connOpend()){
+        qDebug() << "Error: connection with database failed ";
+        return;
+    }
+
+    conn.connOpend();
+    QSqlQuery qry;
+    QString customerName;
+
+    //get the data in from the ui intput
+    customerName   = ui->CustomerName->text();
+
+    // delete the item
+    qry.prepare("Delete from Customers where name='"+customerName+"'");
+
+    // error message if the item can't be added due to the data base
+    if(qry.exec())
+    {
+        QMessageBox::about(this, "", "The item has been deleted. double check to see that it was deleted");
+        //Closes conncection to data base
+        conn.connClose();
+    }
+    else
+    {
+        QMessageBox::about(this, "Error", "Database not found double check path to database");
+    }
+}
+
