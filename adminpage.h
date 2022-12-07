@@ -33,6 +33,8 @@ private slots:
 
     void on_ViewCutomersButton_clicked();
 
+    void on_ViewItemsButton_clicked();
+
 private:
     Ui::adminpage *ui;
     addItme addItemUi;

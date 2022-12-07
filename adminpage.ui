@@ -154,6 +154,19 @@
     </rect>
    </property>
   </widget>
+  <widget class="QPushButton" name="ViewItemsButton">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>41</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>View Items</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
