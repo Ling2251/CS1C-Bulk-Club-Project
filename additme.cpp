@@ -62,6 +62,38 @@ void addItme::on_AddButton_clicked()
 void addItme::on_DeleteButton_clicked()
 {
 
+    // opned the data base
+    DBManager conn;
+    if(!conn.connOpend()){
+        qDebug() << "Error: connection with database failed";
+        return;
+    }
+    conn.connOpend();
+    QSqlQuery qry;
+    QString itemName,itemNumber;
+
+    //get the data in from the ui intput
+    itemName   = ui->ItemName->text();
+    itemNumber = ui->ItemNumber->text();
+
+    // delete the item
+    qry.prepare("Delete from inventory where quantity='"+itemName+"'");
+    qry.prepare("Delete from inventory where quantity='"+itemNumber+"'");
+
+
+
+    // error message if the item can't be added due to the data base
+    if(qry.exec())
+    {
+        QMessageBox::about(this, "", "The item(s) was/were deleted, double check if error occured");
+        // close the connection to data base
+        conn.connClose();
+    }
+    else
+    {
+        QMessageBox::about(this, "Error", "Database not found double check path to database");
+    }
+
 }
 
 
