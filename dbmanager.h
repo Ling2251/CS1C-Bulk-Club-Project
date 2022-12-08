@@ -21,7 +21,7 @@ public:
     // opened the data base here so other cpp/h can have accses to it
     bool connOpend(){
         m_database = QSqlDatabase::addDatabase("QSQLITE");
-        m_database.setDatabaseName("/users/diego/CS1C-Bulk-Club-Project/Database.db");
+        m_database.setDatabaseName("../CS1C-Bulk-Club-Project/Database.db");
         if(!m_database.open())
         {
            qDebug() << "Error: connection with database failed";

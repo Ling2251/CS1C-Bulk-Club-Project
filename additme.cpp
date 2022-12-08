@@ -61,12 +61,7 @@ void addItme::on_AddButton_clicked()
 
 void addItme::on_DeleteButton_clicked()
 {
-    /*
-     * Not working ad it should for example if theres an item with 88 quantity, you cant take just 2 off and
-     * it would update to 86, you have to take the whole amount off, still needs to be tweaked
-     */
-
-    // opned the data base
+     // opned the data base
     DBManager conn;
     if(!conn.connOpend()){
         qDebug() << "Error: connection with database failed";
@@ -74,21 +69,16 @@ void addItme::on_DeleteButton_clicked()
     }
     conn.connOpend();
     QSqlQuery qry;
-    QString itemName,itemNumber;
+    QString itemName;
 
     //get the data in from the ui intput
     itemName   = ui->ItemName->text();
-    itemNumber = ui->ItemNumber->text();
 
     // delete the item
-    qry.prepare("Delete from inventory where quantity='"+itemName+"'");
-    qry.prepare("Delete from inventory where quantity='"+itemNumber+"'");
+    qry.prepare("Delete from inventory where name=='"+itemName+"'");
 
-
-
-    // error message if the item can't be added due to the data base
-    if(qry.exec())
-    {
+    // error message if the item can't be deleted due to the data base
+    if(qry.exec()){
         QMessageBox::about(this, "", "The item(s) was/were deleted, double check if error occured");
         // close the connection to data base
         conn.connClose();
@@ -97,6 +87,7 @@ void addItme::on_DeleteButton_clicked()
     {
         QMessageBox::about(this, "Error", "Database not found double check path to database");
     }
+
 
 }
 
