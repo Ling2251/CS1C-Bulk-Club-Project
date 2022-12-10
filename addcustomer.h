@@ -18,6 +18,7 @@ class addCustomer : public QDialog
 public:
     explicit addCustomer(QWidget *parent = nullptr);
     ~addCustomer();
+    void ClearSreen();
 
 private slots:
     void on_AddCustomerButton_clicked();
@@ -26,6 +27,8 @@ private slots:
 
 private:
     Ui::addCustomer *ui;
+    // for error checking inputs.
+    bool addOrDelet;
 };
 
 #endif // ADDCUSTOMER_H

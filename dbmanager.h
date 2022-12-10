@@ -8,7 +8,7 @@
 class DBManager
 {
 public:
-    DBManager();
+     DBManager();
     ~DBManager();
 
     QSqlDatabase m_database;

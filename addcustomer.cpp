@@ -44,24 +44,46 @@ void addCustomer::on_AddCustomerButton_clicked()
     Day            = ui->Day->text();
     Year           = ui->Year->text();
 
-
-    // add the item
-    qry.prepare("insert into Customers (name, ID, customersType, expMonth, expDay,expYear) values ('"+customerName+"', '"+customerID+"', '"+type+"', '"+Month+"','"+Day+"','"+Year+"')");
-
-    // error message if the item can't be added due to the data base
-    if(qry.exec())
-    {
-        QMessageBox::about(this, "", "The item was added. double check if error occured");
-        // close the connection to data base
-        conn.connClose();
+    // error checking input
+    if(customerName != "" && customerID != "" && type != "" && Month != "" && Day != "" && Year != ""){
+        addOrDelet = true;
     }
-    else
-    {
-        QMessageBox::about(this, "Error", "Database not found double check path to database");
+    else{
+        addOrDelet = false;
     }
+
+    if(addOrDelet){
+        // add the item
+        qry.prepare("insert into Customers (name, ID, customersType, expMonth, expDay,expYear) values ('"+customerName+"', '"+customerID+"', '"+type+"', '"+Month+"','"+Day+"','"+Year+"')");
+        // error message if the item can't be added due to the data base
+        if(qry.exec())
+        {
+            QMessageBox::about(this, "", "The item was added. double check if error occured");
+            // close the connection to data base
+            conn.connClose();
+        }
+        else
+        {
+            QMessageBox::about(this, "Error", "Database not found double check path to database");
+        }
+    }
+    else{
+         QMessageBox::about(this, "Error", "Can't enter an empty input to add customer, please try agin");
+         ClearSreen();
+    }
+
+
 }
 
-
+void addCustomer::ClearSreen()
+{
+    ui->CustomerName->clear();
+    ui->CutpmerID->clear();
+    ui->CustomerType->clear();
+    ui->Month->clear();
+    ui->Day->clear();
+    ui->Year->clear();
+}
 
 void addCustomer::on_DeleteCustomerButton_clicked()
 {
