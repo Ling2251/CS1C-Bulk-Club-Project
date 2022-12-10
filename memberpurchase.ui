@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>536</width>
-    <height>398</height>
+    <width>538</width>
+    <height>357</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,16 +16,6 @@
   <property name="styleSheet">
    <string notr="true">alternate-background-color: rgb(0, 85, 127);</string>
   </property>
-  <widget class="QLineEdit" name="CoustomerType">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>140</y>
-     <width>121</width>
-     <height>24</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
@@ -168,8 +158,8 @@
   <widget class="QPushButton" name="close">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>350</y>
+     <x>270</x>
+     <y>300</y>
      <width>131</width>
      <height>41</height>
     </rect>
@@ -199,19 +189,6 @@
      <width>121</width>
      <height>24</height>
     </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="DeletPurchaseButton">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>300</y>
-     <width>141</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Delet Purchase</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_7">
@@ -328,6 +305,16 @@
    </property>
    <property name="text">
     <string>Upadte Inventory</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="TypeComboBox">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>140</y>
+     <width>121</width>
+     <height>24</height>
+    </rect>
    </property>
   </widget>
  </widget>

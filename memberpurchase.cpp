@@ -18,6 +18,7 @@ memberPurchase::memberPurchase(QWidget *parent) :
     }
     // display the item name in the item drop box
     ShowItemsInComboBox();
+    ShowMembershipComboBox();
 
 }
 
@@ -58,6 +59,16 @@ void memberPurchase::ShowItemsPriceComboBox(){
     ui->PriceComboBox->setModel(modal);
 }
 
+// function that will show the Membership of the customer
+void memberPurchase::ShowMembershipComboBox(){
+
+    QString regular = "Regular";
+    QString executive = "Executive";
+
+    ui->TypeComboBox->addItem(regular);
+    ui->TypeComboBox->addItem(executive);
+}
+
 // the main function that created the purchase
 void memberPurchase::on_AddPurchaseButton_clicked()
 {
@@ -77,7 +88,7 @@ void memberPurchase::on_AddPurchaseButton_clicked()
 
     //get the data in from the ui intput
     customerID   = ui->CoustomerID->text();
-    type         = ui->CoustomerType->text();
+    type         = ui->TypeComboBox->currentText();
     purchaseDate = ui->PurchaseDate->text();
     item         = ui->ItemComboBox->currentText();
     price        = ui->PriceComboBox->currentText().toDouble();
@@ -111,16 +122,8 @@ void memberPurchase::on_AddPurchaseButton_clicked()
 
 }
 
-// function that delet the purchase
-void memberPurchase::on_DeletPurchaseButton_clicked()
-{
-
-
-    addOrDelet = false;
-}
-
-
 // after load the item need an button to updat the price to that item
+// and load the cutomer type with the ID user enter
 void memberPurchase::on_LoadPriceButton_clicked()
 {
     // opned the data base
@@ -137,18 +140,11 @@ void memberPurchase::on_UpdateInventory_clicked(int itemNumber,QString item)
 {
     // opned the data base
     DBManager conn;
-
     QSqlQuery qry;
 
     // edit/updated the inventroy for the number of Item is sell
-    // base on if it's creating a purchase or delete a purchase
-    if(addOrDelet){
-        qry.prepare("update Inventory set quantity= (quantity - ?)where name='"+item+"'");
-   }
-   else{
-        qry.prepare("update Inventory set quantity= (quantity + ?)where name='"+item+"'");
-    }
-   qry.addBindValue(itemNumber);
+    qry.prepare("update Inventory set quantity= (quantity - ?)where name='"+item+"'");
+    qry.addBindValue(itemNumber);
 
     // error message if the purchase can't be added due to the data base
     if(qry.exec())
@@ -159,7 +155,7 @@ void memberPurchase::on_UpdateInventory_clicked(int itemNumber,QString item)
     }
     else
     {
-       QMessageBox::about(this, "Error", "Database not found double check path to database");
+       QMessageBox::about(this, "Error", "Database not found for double check path to database");
     }
 }
 
