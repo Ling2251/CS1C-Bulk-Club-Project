@@ -104,19 +104,33 @@ void addCustomer::on_DeleteCustomerButton_clicked()
     //get the data in from the ui intput
     customerName   = ui->CustomerName->text();
 
-    // delete the item
-    qry.prepare("Delete from Customers where name='"+customerName+"'");
-
-    // error message if the item can't be added due to the data base
-    if(qry.exec())
-    {
-        QMessageBox::about(this, "", "The item has been deleted. double check to see that it was deleted");
-        //Closes conncection to data base
-        conn.connClose();
+    // error checking input
+    if(customerName != ""){
+        addOrDelet = true;
     }
-    else
-    {
-        QMessageBox::about(this, "Error", "Database not found double check path to database");
+    else{
+        addOrDelet = false;
+    }
+
+    if(addOrDelet){
+        // delete the item
+        qry.prepare("Delete from Customers where name='"+customerName+"'");
+
+        // error message if the item can't be added due to the data base
+        if(qry.exec())
+        {
+            QMessageBox::about(this, "", "The item has been deleted. double check to see that it was deleted");
+            //Closes conncection to data base
+            conn.connClose();
+        }
+        else
+        {
+            QMessageBox::about(this, "Error", "Database not found double check path to database");
+        }
+    }
+    else{
+        QMessageBox::about(this, "Error", "Can't enter an empty input to delet customer, please try agin");
+        ClearSreen();
     }
 }
 
