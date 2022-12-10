@@ -5,6 +5,8 @@
 #include <QtSql>
 #include <QSqlQuery>
 #include <QMessageBox>
+#include <QInputDialog>
+#include <QIntValidator>
 #include "dbmanager.h"
 
 namespace Ui {
