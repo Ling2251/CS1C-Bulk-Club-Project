@@ -41,21 +41,43 @@ void addItme::on_AddButton_clicked()
     itemPrice  = ui->ItemPrice->text();
     itemNumber = ui->ItemNumber->text();
 
-    // add the item
-    qry.prepare("insert into Inventory (name, price, quantity) values ('"+itemName+"', '"+itemPrice+"', '"+itemNumber+"')");
 
-    // error message if the item can't be added due to the data base
-    if(qry.exec())
-    {
-        QMessageBox::about(this, "", "The item was added, double check if error occured");
-        // close the connection to data base
-        conn.connClose();
+    // error checking input
+    if(itemName != "" && itemPrice != "" && itemNumber != ""){
+        addOrDelet = true;
     }
-    else
-    {
-        QMessageBox::about(this, "Error", "Database not found double check path to database");
+    else{
+        addOrDelet = false;
     }
 
+    if(addOrDelet){
+        // add the item
+        qry.prepare("insert into Inventory (name, price, quantity) values ('"+itemName+"', '"+itemPrice+"', '"+itemNumber+"')");
+
+        // error message if the item can't be added due to the data base
+        if(qry.exec())
+        {
+            QMessageBox::about(this, "", "The item was added, double check if error occured");
+            // close the connection to data base
+            conn.connClose();
+        }
+        else
+        {
+            QMessageBox::about(this, "Error", "Database not found double check path to database");
+        }
+    }
+    else{
+        QMessageBox::about(this, "Error", "Can't enter an empty input to add an item, please try agin");
+        ClearSreen();
+    }
+}
+
+// clear the input if it has invailed inputs
+void addItme::ClearSreen()
+{
+    ui->ItemName->clear();
+    ui->ItemPrice->clear();
+    ui->ItemNumber->clear();
 }
 
 
@@ -74,19 +96,34 @@ void addItme::on_DeleteButton_clicked()
     //get the data in from the ui intput
     itemName   = ui->ItemName->text();
 
-    // delete the item
-    qry.prepare("Delete from inventory where name=='"+itemName+"'");
+    // error checking input
+    if(itemName != ""){
+        addOrDelet = true;
+    }
+    else{
+        addOrDelet = false;
+    }
 
-    // error message if the item can't be deleted due to the data base
-    if(qry.exec()){
-        QMessageBox::about(this, "", "The item(s) was/were deleted, double check if error occured");
-        // close the connection to data base
-        conn.connClose();
+    if(addOrDelet){
+        // delete the item
+        qry.prepare("Delete from inventory where name=='"+itemName+"'");
+
+        // error message if the item can't be deleted due to the data base
+        if(qry.exec()){
+            QMessageBox::about(this, "", "The item(s) was/were deleted, double check if error occured");
+            // close the connection to data base
+            conn.connClose();
+        }
+        else
+        {
+            QMessageBox::about(this, "Error", "Database not found double check path to database");
+        }
     }
-    else
-    {
-        QMessageBox::about(this, "Error", "Database not found double check path to database");
+    else{
+        QMessageBox::about(this, "Error", "Can't enter an empty or invaild input to delet an item , please try agin");
+        ClearSreen();
     }
+
 
 
 }
