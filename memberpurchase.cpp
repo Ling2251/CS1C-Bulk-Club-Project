@@ -27,6 +27,15 @@ memberPurchase::~memberPurchase()
     delete ui;
 }
 
+// clear the input if it has invailed inputs
+void memberPurchase::ClearSreen()
+{
+    ui->CoustomerID->clear();
+    ui->PurchaseDate->clear();
+    ui->itemNum->clear();
+}
+
+
 // function that will show all the itme in a drop box
 void memberPurchase::ShowItemsInComboBox(){
     DBManager conn;
@@ -97,29 +106,40 @@ void memberPurchase::on_AddPurchaseButton_clicked()
     // get the total price with the number of item purchase
     price = price * itemNumber;
 
-     // add the item
-    qry.prepare("insert into dailySalesReport (purchaseDate, ID, item, price, quantity) VALUES (?, ?, ?, ?, ?);");
-    qry.addBindValue(purchaseDate);
-    qry.addBindValue(customerID);
-    qry.addBindValue(item);
-    qry.addBindValue(price);
-    qry.addBindValue(itemNumber);
-
-    // error message if the purchase can't be added due to the data base
-    if(qry.exec())
-    {
-        QMessageBox::about(this, "", "The purchase was added, double check if error occured");
+    // error checking input
+    if(customerID != "" && type != "" && purchaseDate != "" && item != "" && qry.next()){
         addOrDelet = true;
-        on_UpdateInventory_clicked(itemNumber,item);
-        // close the connection to data base
-        conn.connClose();
     }
-    else
-    {
-        QMessageBox::about(this, "Error", "Database not found double check path to database");
+    else{
+        addOrDelet = false;
     }
 
+    if(addOrDelet){
+         // add the item
+        qry.prepare("insert into dailySalesReport (purchaseDate, ID, item, price, quantity) VALUES (?, ?, ?, ?, ?);");
+        qry.addBindValue(purchaseDate);
+        qry.addBindValue(customerID);
+        qry.addBindValue(item);
+        qry.addBindValue(price);
+        qry.addBindValue(itemNumber);
 
+        // error message if the purchase can't be added due to the data base
+        if(qry.exec())
+        {
+            QMessageBox::about(this, "", "The purchase was added, double check if error occured");
+            on_UpdateInventory_clicked(itemNumber,item);
+            // close the connection to data base
+            conn.connClose();
+        }
+        else
+        {
+            QMessageBox::about(this, "Error", "Database not found double check path to database");
+        }
+    }
+    else{
+        QMessageBox::about(this, "Error", "Can't enter an empty input or invaild input to create an purchase, please try agin");
+        ClearSreen();
+    }
 }
 
 // after load the item need an button to updat the price to that item

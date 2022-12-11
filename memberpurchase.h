@@ -20,8 +20,8 @@ public:
     ~memberPurchase();
     void ShowItemsInComboBox();   // Shows item names in item combo box
     void ShowItemsPriceComboBox();   // Shows item price in item combo box
-    void memberPurchase::ShowMembershipComboBox();// show the Membership of the customer
-
+    void ShowMembershipComboBox();// show the Membership of the customer
+    void ClearSreen();
 private slots:
 
     void on_AddPurchaseButton_clicked();
