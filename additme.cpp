@@ -97,7 +97,7 @@ void addItme::on_DeleteButton_clicked()
     itemName   = ui->ItemName->text();
 
     // error checking input
-    if(itemName != ""){
+    if(itemName != "" && qry.next()){
         addOrDelet = true;
     }
     else{
@@ -120,7 +120,7 @@ void addItme::on_DeleteButton_clicked()
         }
     }
     else{
-        QMessageBox::about(this, "Error", "Can't enter an empty input to delet an item, please try agin");
+        QMessageBox::about(this, "Error", "Can't enter an empty or invaild input to delet an item , please try agin");
         ClearSreen();
     }
 
