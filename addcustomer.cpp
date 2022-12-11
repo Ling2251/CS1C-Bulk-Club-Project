@@ -105,7 +105,7 @@ void addCustomer::on_DeleteCustomerButton_clicked()
     customerName   = ui->CustomerName->text();
 
     // error checking input
-    if(customerName != "" && qry.next()){
+    if(customerName != ""){
         addOrDelet = true;
     }
     else{
@@ -119,7 +119,7 @@ void addCustomer::on_DeleteCustomerButton_clicked()
         // error message if the item can't be added due to the data base
         if(qry.exec())
         {
-            QMessageBox::about(this, "", "The item has been deleted. double check to see that it was deleted");
+            QMessageBox::about(this, "", "The customer has been deleted. double check to see that it was deleted");
             //Closes conncection to data base
             conn.connClose();
         }

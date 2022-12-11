@@ -54,7 +54,7 @@ void membershipChange::on_ChangeButton_clicked()
     Year         = ui->Year->text();
 
     // error checking input
-    if(customerID != "" && type != "" && type != "" && Month != "" && Day != "" && Year != "" && qry.next()){
+    if(customerID != "" && type != "" && type != "" && Month != "" && Day != "" && Year != ""){
         addOrDelet = true;
     }
     else{

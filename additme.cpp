@@ -97,7 +97,7 @@ void addItme::on_DeleteButton_clicked()
     itemName   = ui->ItemName->text();
 
     // error checking input
-    if(itemName != "" && qry.next()){
+    if(itemName != ""){
         addOrDelet = true;
     }
     else{

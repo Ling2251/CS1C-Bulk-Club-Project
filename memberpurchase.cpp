@@ -107,7 +107,7 @@ void memberPurchase::on_AddPurchaseButton_clicked()
     price = price * itemNumber;
 
     // error checking input
-    if(customerID != "" && type != "" && purchaseDate != "" && item != "" && qry.next()){
+    if(customerID != "" && type != "" && purchaseDate != "" && item != ""){
         addOrDelet = true;
     }
     else{
