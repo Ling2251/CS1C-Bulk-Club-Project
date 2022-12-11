@@ -18,7 +18,11 @@ SOURCES += \
     managerdailyreport.cpp \
     memberpurchase.cpp \
     membershipchange.cpp \
-    storemanager.cpp
+    rebatemember.cpp \
+    salesreport.cpp \
+    storemanager.cpp \
+    totalpurchase.cpp \
+    totalrevenue.cpp
 
 HEADERS += \
     addcustomer.h \
@@ -30,7 +34,11 @@ HEADERS += \
     managerdailyreport.h \
     memberpurchase.h \
     membershipchange.h \
-    storemanager.h
+    rebatemember.h \
+    salesreport.h \
+    storemanager.h \
+    totalpurchase.h \
+    totalrevenue.h
 
 FORMS += \
     addcustomer.ui \
@@ -41,7 +49,11 @@ FORMS += \
     managerdailyreport.ui \
     memberpurchase.ui \
     membershipchange.ui \
-    storemanager.ui
+    rebatemember.ui \
+    salesreport.ui \
+    storemanager.ui \
+    totalpurchase.ui \
+    totalrevenue.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

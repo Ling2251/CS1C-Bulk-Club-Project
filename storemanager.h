@@ -3,6 +3,11 @@
 
 #include <QDialog>
 #include"managerdailyreport.h"
+#include "salesreport.h"
+#include "dbmanager.h"
+#include "totalrevenue.h"
+#include "totalpurchase.h"
+#include "rebatemember.h"
 
 namespace Ui {
 class storemanager;
@@ -31,6 +36,13 @@ private slots:
 
 private:
     Ui::storemanager *ui;
+    managerDailyReport managerDailyReportUi;
+    salesReport salesReportUi;
+    totalRevenue totalRevenueUi;
+    totalPurchase totalPurchaseUi;
+    rebateMember rebateMemberUi;
+
+
 };
 
 #endif // STOREMANAGER_H

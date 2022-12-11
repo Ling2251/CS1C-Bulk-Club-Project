@@ -1,9 +1,12 @@
 #ifndef MANAGERDAILYREPORT_H
 #define MANAGERDAILYREPORT_H
 
-#include <QDialog>
-#include "dbmanager.h"
 
+#include <QDialog>
+#include <QtSql>
+#include <QSqlQuery>
+#include <QMessageBox>
+#include "dbmanager.h"
 namespace Ui {
 class managerDailyReport;
 }
