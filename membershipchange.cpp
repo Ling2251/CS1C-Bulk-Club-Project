@@ -23,6 +23,17 @@ membershipChange::~membershipChange()
     delete ui;
 }
 
+// clear the input if it has invailed inputs
+void membershipChange::ClearSreen()
+{
+    ui->CustomerIDEdit->clear();
+    ui->MembershipEdit->clear();
+    ui->Month->clear();
+    ui->Day->clear();
+    ui->Year->clear();
+}
+
+
 void membershipChange::on_ChangeButton_clicked()
 {
     // opned the data base
@@ -42,20 +53,35 @@ void membershipChange::on_ChangeButton_clicked()
     Day          = ui->Day->text();
     Year         = ui->Year->text();
 
-    // update the membership
-    qry.prepare("update Customers set ID='"+customerID+"',customersType='"+type+"',expMonth='"+Month+"',expDay='"+Day+"',expYear='"+Year+"' where ID='"+customerID+"'");
+    // error checking input
+    if(customerID != "" && type != "" && type != "" && Month != "" && Day != "" && Year != "" && qry.next()){
+        addOrDelet = true;
+    }
+    else{
+        addOrDelet = false;
+    }
 
-    // error message if the item can't be updataed due to the data base
-    if(qry.exec())
-    {
-        QMessageBox::about(this, "", "Membership has changed,please check if an error has occured");
-        // close the connection to data base
-        conn.connClose();
+    if(addOrDelet){
+        // update the membership
+        qry.prepare("update Customers set ID='"+customerID+"',customersType='"+type+"',expMonth='"+Month+"',expDay='"+Day+"',expYear='"+Year+"' where ID='"+customerID+"'");
+
+        // error message if the item can't be updataed due to the data base
+        if(qry.exec())
+        {
+            QMessageBox::about(this, "", "Membership has changed,please check if an error has occured");
+            // close the connection to data base
+            conn.connClose();
+        }
+        else
+        {
+            QMessageBox::about(this, "Error", "Database not found, please check path to database");
+        }
     }
-    else
-    {
-        QMessageBox::about(this, "Error", "Database not found, please check path to database");
+    else{
+        QMessageBox::about(this, "Error", "Can't enter an empty input or invaild input to change the membership, please try agin");
+        ClearSreen();
     }
+
 
 }
 
