@@ -105,7 +105,7 @@ void addCustomer::on_DeleteCustomerButton_clicked()
     customerName   = ui->CustomerName->text();
 
     // error checking input
-    if(customerName != ""){
+    if(customerName != "" && qry.next()){
         addOrDelet = true;
     }
     else{
@@ -129,7 +129,7 @@ void addCustomer::on_DeleteCustomerButton_clicked()
         }
     }
     else{
-        QMessageBox::about(this, "Error", "Can't enter an empty input to delet customer, please try agin");
+        QMessageBox::about(this, "Error", "Can't enter an empty input or invaild input to delet customer, please try agin");
         ClearSreen();
     }
 }
