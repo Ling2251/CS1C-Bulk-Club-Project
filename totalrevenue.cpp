@@ -12,3 +12,9 @@ totalRevenue::~totalRevenue()
 {
     delete ui;
 }
+
+void totalRevenue::on_TotalRevenuePushButton_clicked()
+{
+
+}
+

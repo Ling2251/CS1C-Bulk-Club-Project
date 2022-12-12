@@ -19,6 +19,9 @@ public:
     explicit totalRevenue(QWidget *parent = nullptr);
     ~totalRevenue();
 
+private slots:
+    void on_TotalRevenuePushButton_clicked();
+
 private:
     Ui::totalRevenue *ui;
 };
