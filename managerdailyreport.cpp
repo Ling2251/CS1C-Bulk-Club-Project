@@ -7,6 +7,17 @@ managerDailyReport::managerDailyReport(QWidget *parent) :
     ui(new Ui::managerDailyReport)
 {
     ui->setupUi(this);
+    // added the data base connection to additme
+    DBManager conn;
+    if(!conn.connOpend()){
+        qDebug() << "Error: connection with database failed";
+    }
+    else{
+        qDebug() << "Connected to database.";
+
+    }
+
+   ShowDateComboBox();
 
 }
 
@@ -15,8 +26,25 @@ managerDailyReport::~managerDailyReport()
     delete ui;
 }
 
+// function that will show all the itme in a drop box
+void managerDailyReport::ShowDateComboBox(){
+    DBManager conn;
 
-void managerDailyReport::on_pushButton_clicked()
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    QSqlQuery * list = new QSqlQuery(conn.m_database);
+
+    // only put the name out from the inventory
+    list->prepare("select purchaseDate from dailySalesReport");
+    list->exec();
+
+    // if exect then set it to the ui
+    modal->setQuery(*list);
+    ui->DatecomboBox->setModel(modal);
+}
+
+
+
+void managerDailyReport::on_AllDailyReport_clicked()
 {
     DBManager conn;
 
@@ -32,26 +60,31 @@ void managerDailyReport::on_pushButton_clicked()
     conn.connOpend();
 
     QSqlQuery* qry = new QSqlQuery(conn.m_database);
-    QString currentDay = "12/10/2021";
+    QString currentDay;
+
+    currentDay = ui->DatecomboBox->currentText();
 
     //selects the list in the data base
-    qry->prepare("select * from dailySalesReport where purchaseDate =='"+currentDay+"''");
+    qry->prepare("select * from dailySalesReport where purchaseDate= ?");
+    qry->addBindValue(currentDay);
 
     // error message if the item can't be added due to the data base
     if(qry->exec())
     {
-        QMessageBox::about(this, "", "The daily report is printed, double check if error occured");
+        while(qry->next()){
+            QMessageBox::about(this, "", "The daily report is printed, double check if error occured");
 
-        //Tranfers data from Querry to model
-        modal->setQuery(*qry);
+            //Tranfers data from Querry to model
+            modal->setQuery(*qry);
 
-        //data base customers get viewed on the ui table view
-        ui->DailyReportView->setModel(modal);
+            //data base customers get viewed on the ui table view
+            ui->DailyReportView->setModel(modal);
 
-        //closes connention to data base
-        conn.connClose();
-        //counts rows from the model
-        qDebug() <<(modal->rowCount());
+            //closes connention to data base
+            conn.connClose();
+            //counts rows from the model
+            qDebug() <<(modal->rowCount());
+        }
     }
     else
     {
