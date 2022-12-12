@@ -19,10 +19,15 @@ public:
     explicit totalPurchase(QWidget *parent = nullptr);
     ~totalPurchase();
 
+    void ItemsPurchaseComboBox();
+
+    void idPurchaseComboBox();
+
 private slots:
     void on_customerShow_clicked();
 
     void on_itemShow_clicked();
+
 
 private:
     Ui::totalPurchase *ui;
