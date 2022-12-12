@@ -23,6 +23,10 @@ public:
 private slots:
     void on_AllDailyReport_clicked();
 
+    void on_ShowExecutiveButton_clicked();
+
+    void on_ShowRegularButton_clicked();
+
 private:
     Ui::managerDailyReport *ui;
 };
