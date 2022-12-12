@@ -7,6 +7,9 @@ totalPurchase::totalPurchase(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
+    ItemsPurchaseComboBox();
+    idPurchaseComboBox();
 }
 
 totalPurchase::~totalPurchase()
@@ -82,4 +85,37 @@ void totalPurchase::on_itemShow_clicked()
     //counts rows from the model
     qDebug() <<(modal->rowCount());
 }
+
+void totalPurchase::ItemsPurchaseComboBox()
+{
+    DBManager conn;
+
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    QSqlQuery * list = new QSqlQuery(conn.m_database);
+
+    // only put the name out from the inventory
+    list->prepare("select item from dailySalesReport");
+    list->exec();
+
+    // if exect then set it to the ui
+    modal->setQuery(*list);
+    ui->ItemPurchaseCombox->setModel(modal);
+}
+
+void totalPurchase::idPurchaseComboBox()
+{
+    DBManager conn;
+
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    QSqlQuery * list = new QSqlQuery(conn.m_database);
+
+    // only put the name out from the inventory
+    list->prepare("select ID from dailySalesReport");
+    list->exec();
+
+    // if exect then set it to the ui
+    modal->setQuery(*list);
+    ui->IDcomBox->setModel(modal);
+}
+
 
