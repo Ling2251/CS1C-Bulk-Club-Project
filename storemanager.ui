@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>496</width>
-    <height>370</height>
+    <width>909</width>
+    <height>583</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>280</x>
      <y>10</y>
      <width>301</width>
      <height>41</height>
@@ -38,10 +38,10 @@
   <widget class="QPushButton" name="DailtReportButton">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>90</y>
-     <width>131</width>
-     <height>41</height>
+     <x>230</x>
+     <y>408</y>
+     <width>181</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="font">
@@ -60,10 +60,10 @@
   <widget class="QPushButton" name="salesReporButton">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>150</y>
-     <width>131</width>
-     <height>41</height>
+     <x>232</x>
+     <y>298</y>
+     <width>181</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="font">
@@ -82,10 +82,10 @@
   <widget class="QPushButton" name="TotalReenueButton">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>210</y>
-     <width>131</width>
-     <height>41</height>
+     <x>232</x>
+     <y>188</y>
+     <width>181</width>
+     <height>101</height>
     </rect>
    </property>
    <property name="font">
@@ -104,10 +104,10 @@
   <widget class="QPushButton" name="TotalPurchasesButton">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>270</y>
-     <width>131</width>
-     <height>41</height>
+     <x>230</x>
+     <y>70</y>
+     <width>181</width>
+     <height>111</height>
     </rect>
    </property>
    <property name="font">
@@ -126,10 +126,10 @@
   <widget class="QPushButton" name="rebateButton">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>90</y>
-     <width>151</width>
-     <height>41</height>
+     <x>430</x>
+     <y>70</y>
+     <width>221</width>
+     <height>111</height>
     </rect>
    </property>
    <property name="font">
