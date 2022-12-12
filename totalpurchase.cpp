@@ -1,23 +1,13 @@
-#include "managerdailyreport.h"
-#include "ui_managerdailyreport.h"
+#include "totalpurchase.h"
+#include "ui_totalpurchase.h"
 
-
-managerDailyReport::managerDailyReport(QWidget *parent) :
+totalPurchase::totalPurchase(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::managerDailyReport)
+    ui(new Ui::totalPurchase)
 {
     ui->setupUi(this);
 
-}
 
-managerDailyReport::~managerDailyReport()
-{
-    delete ui;
-}
-
-
-void managerDailyReport::on_pushButton_clicked()
-{
     DBManager conn;
 
     QSqlQueryModel * modal = new QSqlQueryModel();
@@ -41,11 +31,16 @@ void managerDailyReport::on_pushButton_clicked()
     modal->setQuery(*qry);
 
     //data base customers get viewed on the ui table view
-    ui->DailyReportView->setModel(modal);
+    ui->tableView->setModel(modal);
 
     //closes connention to data base
     conn.connClose();
     //counts rows from the model
     qDebug() <<(modal->rowCount());
+
 }
 
+totalPurchase::~totalPurchase()
+{
+    delete ui;
+}

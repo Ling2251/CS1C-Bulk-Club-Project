@@ -18,6 +18,7 @@ class addItme : public QDialog
 public:
     explicit addItme(QWidget *parent = nullptr);
     ~addItme();
+    void ClearSreen();
 private slots:
     void on_AddButton_clicked();
 
@@ -26,6 +27,8 @@ private slots:
 
 private:
     Ui::addItme *ui;
+    // for error checking inputs.
+    bool addOrDelet;
 };
 
 #endif // ADDITME_H

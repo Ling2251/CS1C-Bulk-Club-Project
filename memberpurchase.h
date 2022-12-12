@@ -18,9 +18,21 @@ class memberPurchase : public QDialog
 public:
     explicit memberPurchase(QWidget *parent = nullptr);
     ~memberPurchase();
+    void ShowItemsInComboBox();   // Shows item names in item combo box
+    void ShowItemsPriceComboBox();   // Shows item price in item combo box
+    void ShowMembershipComboBox();// show the Membership of the customer
+    void ClearSreen();
+private slots:
+
+    void on_AddPurchaseButton_clicked();
+
+    void on_LoadPriceButton_clicked();
+
+    void on_UpdateInventory_clicked(int itemNumber,QString item);
 
 private:
     Ui::memberPurchase *ui;
+    bool addOrDelet;
 };
 
 #endif // MEMBERPURCHASE_H
