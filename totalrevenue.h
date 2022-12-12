@@ -19,6 +19,23 @@ public:
     explicit totalRevenue(QWidget *parent = nullptr);
     ~totalRevenue();
 
+    //double GetTotalRevenue(QString date);
+
+private slots:
+
+
+    void on_comboBox_activated(const QString &arg1);
+
+    void on_TotalRevenuePushButton_clicked();
+
+    //void on_TotatMembersPushButton_clicked();
+
+    void on_TotalExecPushButton_clicked();
+
+    void on_TotalRegPushButton_clicked();
+
+
+
 private:
     Ui::totalRevenue *ui;
 };
