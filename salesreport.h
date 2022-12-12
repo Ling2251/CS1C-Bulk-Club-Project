@@ -20,6 +20,9 @@ public:
     explicit salesReport(QWidget *parent = nullptr);
     ~salesReport();
 
+private slots:
+    void on_saleReportButton_clicked();
+
 private:
     Ui::salesReport *ui;
 };

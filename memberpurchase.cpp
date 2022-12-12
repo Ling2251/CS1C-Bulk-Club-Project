@@ -10,7 +10,7 @@ memberPurchase::memberPurchase(QWidget *parent) :
     // added the data base connection to additme
     DBManager conn;
     if(!conn.connOpend()){
-        qDebug() << "Error: connection with database failed";
+        qDebug() << "Error: memberPurchase connection with database failed";
     }
     else{
         qDebug() << "Connected to database.";
@@ -84,7 +84,7 @@ void memberPurchase::on_AddPurchaseButton_clicked()
     // opned the data base
     DBManager conn;
     if(!conn.connOpend()){
-        qDebug() << "Error: connection with database failed";
+        qDebug() << "Error: AddPurchaseButton connection with database failed";
         return;
     }
 

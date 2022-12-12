@@ -18,9 +18,14 @@ class managerDailyReport : public QDialog
 public:
     explicit managerDailyReport(QWidget *parent = nullptr);
     ~managerDailyReport();
+    void ShowDateComboBox();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_AllDailyReport_clicked();
+
+    void on_ShowExecutiveButton_clicked();
+
+    void on_ShowRegularButton_clicked();
 
 private:
     Ui::managerDailyReport *ui;
