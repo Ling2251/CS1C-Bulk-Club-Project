@@ -16,11 +16,40 @@
   <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>20</y>
-     <width>551</width>
-     <height>401</height>
+     <x>140</x>
+     <y>10</y>
+     <width>451</width>
+     <height>521</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="itemShow">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>121</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="text">
+    <string>Item Show</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="customerShow">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>307</y>
+     <width>121</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Customer Show</string>
    </property>
   </widget>
  </widget>
