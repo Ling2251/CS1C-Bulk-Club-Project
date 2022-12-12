@@ -12,10 +12,14 @@ public:
     ~DBManager();
 
     QSqlDatabase m_database;
+    double GetTotalRevenue(QString date);
+
     // close the data base connection and will remove the data base to a defual connection
     void connClose(){
         m_database.close();
         m_database.removeDatabase(QSqlDatabase::defaultConnection);
+
+
     };
 
     // opened the data base here so other cpp/h can have accses to it
