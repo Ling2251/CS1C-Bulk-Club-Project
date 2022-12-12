@@ -19,6 +19,9 @@ public:
     explicit managerDailyReport(QWidget *parent = nullptr);
     ~managerDailyReport();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::managerDailyReport *ui;
 };
