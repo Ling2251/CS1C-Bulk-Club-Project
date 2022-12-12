@@ -23,6 +23,12 @@ public:
 
     void idPurchaseComboBox();
 
+    void on_enterItemPushBtn_clicked();
+
+    void on_enterNamePushBtn_clicked();
+
+    void showTotalPurchasesTable(QSqlQueryModel *model);
+
 private slots:
     void on_customerShow_clicked();
 
@@ -31,6 +37,7 @@ private slots:
 
 private:
     Ui::totalPurchase *ui;
+    DBManager databaseObj;
 };
 
 #endif // TOTALPURCHASE_H

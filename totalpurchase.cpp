@@ -10,11 +10,17 @@ totalPurchase::totalPurchase(QWidget *parent) :
 
     ItemsPurchaseComboBox();
     idPurchaseComboBox();
+
 }
 
 totalPurchase::~totalPurchase()
 {
     delete ui;
+}
+
+void totalPurchase::showTotalPurchasesTable(QSqlQueryModel *model)
+{
+    ui->tableView->setModel(model);
 }
 
 void totalPurchase::on_customerShow_clicked()
@@ -116,6 +122,32 @@ void totalPurchase::idPurchaseComboBox()
     // if exect then set it to the ui
     modal->setQuery(*list);
     ui->IDcomBox->setModel(modal);
+}
+
+void totalPurchase::on_enterItemPushBtn_clicked()
+{
+    QString itemName = ui->ItemPurchaseCombox->currentText();
+    if(itemName == "")
+    {
+       QMessageBox::warning(this, "Warning", "Please enter an item");
+    }
+    else
+    {
+       showTotalPurchasesTable(databaseObj.ShowInfoForOneItem(itemName));
+    }
+}
+
+void totalPurchase::on_enterNamePushBtn_clicked()
+{
+    QString memberName = ui->IDcomBox->currentText();
+    if(memberName == "")
+    {
+       QMessageBox::warning(this, "Warning", "Please enter a name");
+    }
+    else
+    {
+       showTotalPurchasesTable(databaseObj.ShowInfoForOneMember(memberName));
+    }
 }
 
 
