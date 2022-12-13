@@ -74,8 +74,10 @@ void totalRevenue::on_TotalRevenuePushButton_clicked()
     //________________________
 
     //selects the list in the data base
-    qry->prepare("select price, quantity from dailySalesReport where purchaseDate= ?");
-
+    qry->prepare(
+                "select name, customersType, dailySalesReport.ID, item, price, quantity "
+                 "from Customers left join dailySalesReport where Customers.ID = dailySalesReport.ID and purchaseDate = ?"
+                 " and customersType = \"Regular\";");;
     qry->addBindValue(currentDay);
 
     // error message if the item can't be added due to the data base
@@ -145,12 +147,10 @@ void totalRevenue::on_TotalExecPushButton_clicked()
     //selects the list in the data base
 
    qry->prepare(
-               "select name, customersType, purchaseDate, dailySalesReport.ID, item, price, quantity "
-                "from Customers, dailySalesReport where Customers.ID = dailySalesReport.ID"
+               "select name, customersType, dailySalesReport.ID, item, price, quantity "
+                "from Customers left join dailySalesReport where Customers.ID = dailySalesReport.ID and purchaseDate = ?"
                 " and customersType = \"Executive\";");
-
-
-
+    qry->addBindValue(currentDay);
 
     // error message if the item can't be added due to the data base
     if(qry->exec())
@@ -203,6 +203,7 @@ void totalRevenue::on_TotalRegPushButton_clicked()
     qry->prepare("select name, customersType, purchaseDate, dailySalesReport.ID, item, price, quantity "
                 "from Customers, dailySalesReport where Customers.ID = dailySalesReport.ID"
                 " and customersType = \"Regular\";");
+
 
     // error message if the item can't be added due to the data base
     if(qry->exec())
