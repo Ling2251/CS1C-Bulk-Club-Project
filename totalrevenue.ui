@@ -157,22 +157,5 @@
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>comboBox</sender>
-   <signal>activated(QString)</signal>
-   <receiver>TotalRevenuePushButton</receiver>
-   <slot>toggle()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>115</x>
-     <y>32</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>208</x>
-     <y>35</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
