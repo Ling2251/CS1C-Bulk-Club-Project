@@ -123,10 +123,34 @@ void totalRevenue::on_TotalExecPushButton_clicked()
 
     QSqlQuery* qry = new QSqlQuery(conn.m_database);
 
+    //__________________________________________
+    QString currentDay;
+
+    //_____________________________
+
+    QString totalRevenueString;
+    double Revenue;
+
+
+    //_____________________________
+
+    currentDay = ui->comboBox->currentText();
+
+    //________________________
+    Revenue = conn.GetTotalRevenue(currentDay);
+    totalRevenueString = QString::number(Revenue, 'f', 2);
+    //________________________
+    //____________________________________________
+
     //selects the list in the data base
-    qry->prepare("select name, customersType, purchaseDate, dailySalesReport.ID, item, price, quantity "
+
+   qry->prepare(
+               "select name, customersType, purchaseDate, dailySalesReport.ID, item, price, quantity "
                 "from Customers, dailySalesReport where Customers.ID = dailySalesReport.ID"
                 " and customersType = \"Executive\";");
+
+
+
 
     // error message if the item can't be added due to the data base
     if(qry->exec())
@@ -139,7 +163,7 @@ void totalRevenue::on_TotalExecPushButton_clicked()
 
             //data base customers get viewed on the ui table view
             ui->tableView->setModel(modal);
-           // ui->lineEdit->setText("$"+totalRevenueString);
+            ui->lineEdit->setText("$"+totalRevenueString);
 
             //closes connention to data base
             conn.connClose();
