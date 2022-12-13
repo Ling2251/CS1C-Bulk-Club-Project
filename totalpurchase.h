@@ -23,6 +23,10 @@ public:
 
     void idPurchaseComboBox();
 
+    void showTotalPurchase();
+
+    double getTotalPurchase(QString date);
+
 private slots:
     void on_customerShow_clicked();
 

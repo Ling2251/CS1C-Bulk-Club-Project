@@ -218,3 +218,43 @@ void totalPurchase::on_enterNamePushBtn_clicked()
     }
 }
 
+double totalPurchase::getTotalPurchase(QString date)
+{
+    double totalpurchase = 0;
+    QSqlQuery qry;
+
+    if(date == "")
+    {
+        qry.prepare("select printf(\"%.2f\",sum(price * quantity)) from dailySalesReport;");
+        qry.exec();
+        if(qry.next())
+        {
+            totalpurchase = qry.value(0).toDouble();
+        }
+    }
+    else
+    {
+        qry.prepare("select printf(\"%.2f\", sum(price * quantity)) from dailySalesReport where purchaseDate = \""+date+"\";");
+        qry.exec();
+        if(qry.next())
+        {
+            totalpurchase = qry.value(0).toDouble();
+        }
+    }
+    return totalpurchase;
+}
+
+void totalPurchase::showTotalPurchase()
+{
+
+    QString totalpurchaseString;
+    double revenue;
+    revenue = databaseObj.GetTotalRevenue("");
+    totalpurchaseString = QString::number(revenue, 'f', 2);
+
+    ui->purchaseLine->setText("$"+totalpurchaseString);
+
+
+
+}
+
