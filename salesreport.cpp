@@ -6,6 +6,7 @@ salesReport::salesReport(QWidget *parent) :
     ui(new Ui::salesReport)
 {
     ui->setupUi(this);
+    DBManager conn;
 }
 
 salesReport::~salesReport()
