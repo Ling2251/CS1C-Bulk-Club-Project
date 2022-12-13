@@ -248,7 +248,7 @@ double totalPurchase::getTotalPurchase(QString date)
 void totalPurchase::showTotalPurchase()
 {
 
-    QString totalpurchaseString = "820.48";
+    QString totalpurchaseString = "2486.43";
     string to_string (double totalpurchaseString);
 
     ui->purchaseLine->setText("$"+totalpurchaseString);
