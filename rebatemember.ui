@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>560</width>
-    <height>505</height>
+    <width>751</width>
+    <height>514</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>240</x>
      <y>20</y>
      <width>231</width>
      <height>41</height>
@@ -40,7 +40,7 @@
     <rect>
      <x>140</x>
      <y>100</y>
-     <width>401</width>
+     <width>531</width>
      <height>321</height>
     </rect>
    </property>
@@ -48,7 +48,7 @@
   <widget class="QPushButton" name="close">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>220</x>
      <y>440</y>
      <width>281</width>
      <height>51</height>
@@ -99,6 +99,19 @@
    </property>
    <property name="text">
     <string>Expire Month</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Enter">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>270</y>
+     <width>51</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Enter</string>
    </property>
   </widget>
  </widget>

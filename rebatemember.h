@@ -18,6 +18,11 @@ class rebateMember : public QDialog
 public:
     explicit rebateMember(QWidget *parent = nullptr);
     ~rebateMember();
+    void showExpMonth();
+
+private slots:
+    void on_DisplayRebatButton_clicked();
+    void on_Enter_clicked();
 
 private:
     Ui::rebateMember *ui;
