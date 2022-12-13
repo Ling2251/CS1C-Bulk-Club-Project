@@ -6,6 +6,8 @@
 #include <QSqlQuery>
 #include <QMessageBox>
 #include "dbmanager.h"
+#include <string>
+using namespace std;
 
 namespace Ui {
 class totalPurchase;

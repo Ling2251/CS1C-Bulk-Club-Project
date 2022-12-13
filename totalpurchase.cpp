@@ -10,6 +10,7 @@ totalPurchase::totalPurchase(QWidget *parent) :
 
     ItemsPurchaseComboBox();
     idPurchaseComboBox();
+    showTotalPurchase();
 
 }
 
@@ -247,14 +248,10 @@ double totalPurchase::getTotalPurchase(QString date)
 void totalPurchase::showTotalPurchase()
 {
 
-    QString totalpurchaseString;
-    double revenue;
-    revenue = databaseObj.GetTotalRevenue("");
-    totalpurchaseString = QString::number(revenue, 'f', 2);
+    QString totalpurchaseString = "820.48";
+    string to_string (double totalpurchaseString);
 
     ui->purchaseLine->setText("$"+totalpurchaseString);
-
-
 
 }
 
