@@ -42,25 +42,6 @@ double DBManager::GetTotalRevenue(QString date)
 }
 DBManager::~DBManager(){}
 
-QSqlQueryModel *DBManager::ShowInfoForOneMember(QString name)
-{
-    QSqlQueryModel *model = new QSqlQueryModel();
-    QSqlQuery qry;
-
-
-     qry.prepare("SELECT name, type, Customers.ID, \"$\" || printf(\"%.2f\", ifnull(sum(price * quantity)*1.0775, 0))"
-                " as \"Total revenue (7.75%)\" from Customers left JOIN dailySalesReport on Customers.ID = dailySalesReport.ID "
-                "where name = \""+name+"\";");
-
-     if(!qry.exec())
-     {
-         qDebug() <<"error Loading values to db" << endl;
-     }
-
-    model->setQuery(qry);
-    return model;
-
-}
 
 
 
