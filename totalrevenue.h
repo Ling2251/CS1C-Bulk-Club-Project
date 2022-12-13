@@ -18,13 +18,15 @@ class totalRevenue : public QDialog
 public:
     explicit totalRevenue(QWidget *parent = nullptr);
     ~totalRevenue();
+    void ShowDateComboBox();
+
 
     //double GetTotalRevenue(QString date);
 
 private slots:
 
 
-    void on_comboBox_activated(const QString &arg1);
+   // void on_comboBox_activated(const QString &arg1);
 
     void on_TotalRevenuePushButton_clicked();
 
@@ -33,6 +35,8 @@ private slots:
     void on_TotalExecPushButton_clicked();
 
     void on_TotalRegPushButton_clicked();
+
+
 
 
 

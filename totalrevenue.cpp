@@ -10,6 +10,8 @@ totalRevenue::totalRevenue(QWidget *parent) :
     //connect(ui->comboBox,   &QComboBox::activated, this, &totalRevenue::on_comboBox_activated);
     //connect(ui->TotalExecPushButton,   &QPushButton::clicked, this, &totalRevenue::on_TotalExecPushButton_clicked);
 
+    ShowDateComboBox();
+
 }
 
 totalRevenue::~totalRevenue()
@@ -19,6 +21,24 @@ totalRevenue::~totalRevenue()
 
 
 
+// function that will show all the itme in a drop box
+void totalRevenue::ShowDateComboBox(){
+    DBManager conn;
+
+    QSqlQueryModel * modal = new QSqlQueryModel();
+    QSqlQuery * list = new QSqlQuery(conn.m_database);
+
+    // only put the name out from the inventory
+    list->prepare("select purchaseDate from dailySalesReport");
+    list->exec();
+
+    // if exect then set it to the ui
+    modal->setQuery(*list);
+    ui->comboBox->setModel(modal);
+}
+
+
+/*
 void totalRevenue::on_comboBox_activated(const QString &arg1)
 {
     DBManager conn;
@@ -34,6 +54,7 @@ void totalRevenue::on_comboBox_activated(const QString &arg1)
     modal->setQuery(*list);
     ui->comboBox->setModel(modal);
 }
+*/
 
 void totalRevenue::on_TotalRevenuePushButton_clicked()
 {
@@ -70,7 +91,6 @@ void totalRevenue::on_TotalRevenuePushButton_clicked()
 
     //selects the list in the data base
     qry->prepare("select price from dailySalesReport where purchaseDate= ?");
-    //qry->prepare("select price from dailySalesReport");
 
     qry->addBindValue(currentDay);
 
@@ -106,7 +126,7 @@ void totalRevenue::on_TotalExecPushButton_clicked()
 {
     DBManager conn;
     QSqlQueryModel * modal = new QSqlQueryModel();
-    QString type;
+
 
     //if fails to connect to data base
     if(!conn.connOpend()){
@@ -135,6 +155,7 @@ void totalRevenue::on_TotalExecPushButton_clicked()
 
             //data base customers get viewed on the ui table view
             ui->tableView->setModel(modal);
+           // ui->lineEdit->setText("$"+totalRevenueString);
 
             //closes connention to data base
             conn.connClose();
@@ -198,6 +219,11 @@ void totalRevenue::on_TotalRegPushButton_clicked()
         QMessageBox::about(this, "Error", "Database not found double check path to database");
     }
 }
+
+
+
+
+
 
 
 
