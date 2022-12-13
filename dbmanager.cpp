@@ -42,23 +42,6 @@ double DBManager::GetTotalRevenue(QString date)
 }
 DBManager::~DBManager(){}
 
-QSqlQueryModel *DBManager::ShowInfoForOneItem(QString item)
-{
-    QSqlQueryModel *model = new QSqlQueryModel();
-    QSqlQuery qry;
-
-    qry.prepare("SELECT name, quantity as \"total quantity sold\", \"$\" || printf(\"%.2f\",(price * quantity)*1.0775) "
-                "as \"Total revenue\" from Inventory where name = \""+item+"\";");
-
-     if(!qry.exec())
-     {
-         qDebug() <<"error Loading values to db" << endl;
-     }
-
-    model->setQuery(qry);
-    return model;
-}
-
 QSqlQueryModel *DBManager::ShowInfoForOneMember(QString name)
 {
     QSqlQueryModel *model = new QSqlQueryModel();

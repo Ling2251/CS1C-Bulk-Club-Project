@@ -23,17 +23,14 @@ public:
 
     void idPurchaseComboBox();
 
-    void on_enterItemPushBtn_clicked();
-
-    void on_enterNamePushBtn_clicked();
-
-    void showTotalPurchasesTable(QSqlQueryModel *model);
-
 private slots:
     void on_customerShow_clicked();
 
     void on_itemShow_clicked();
 
+    void on_enterItemPushBtn_clicked();
+
+    void on_enterNamePushBtn_clicked();
 
 private:
     Ui::totalPurchase *ui;
