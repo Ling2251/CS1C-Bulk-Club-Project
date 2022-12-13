@@ -40,6 +40,10 @@ public:
         }
     };
 
+    QSqlQueryModel *ShowInfoForOneItem(QString item);
+
+    QSqlQueryModel *ShowInfoForOneMember(QString name);
+
 private:
 };
 
