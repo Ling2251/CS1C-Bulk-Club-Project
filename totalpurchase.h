@@ -6,6 +6,8 @@
 #include <QSqlQuery>
 #include <QMessageBox>
 #include "dbmanager.h"
+#include <string>
+using namespace std;
 
 namespace Ui {
 class totalPurchase;
@@ -23,17 +25,18 @@ public:
 
     void idPurchaseComboBox();
 
-    void on_enterItemPushBtn_clicked();
+    void showTotalPurchase();
 
-    void on_enterNamePushBtn_clicked();
-
-    void showTotalPurchasesTable(QSqlQueryModel *model);
+    double getTotalPurchase(QString date);
 
 private slots:
     void on_customerShow_clicked();
 
     void on_itemShow_clicked();
 
+    void on_enterItemPushBtn_clicked();
+
+    void on_enterNamePushBtn_clicked();
 
 private:
     Ui::totalPurchase *ui;

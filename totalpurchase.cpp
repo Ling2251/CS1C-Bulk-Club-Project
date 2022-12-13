@@ -10,17 +10,13 @@ totalPurchase::totalPurchase(QWidget *parent) :
 
     ItemsPurchaseComboBox();
     idPurchaseComboBox();
+    showTotalPurchase();
 
 }
 
 totalPurchase::~totalPurchase()
 {
     delete ui;
-}
-
-void totalPurchase::showTotalPurchasesTable(QSqlQueryModel *model)
-{
-    ui->tableView->setModel(model);
 }
 
 void totalPurchase::on_customerShow_clicked()
@@ -126,28 +122,136 @@ void totalPurchase::idPurchaseComboBox()
 
 void totalPurchase::on_enterItemPushBtn_clicked()
 {
-    QString itemName = ui->ItemPurchaseCombox->currentText();
-    if(itemName == "")
+    DBManager conn;
+
+    QSqlQueryModel * modal = new QSqlQueryModel();
+
+    //if fails to connect to data base
+    if(!conn.connOpend()){
+        qDebug() << "Error: AllDailyReport connection with database failed ";
+        return;
+    }
+
+    //Opens connection to to database
+    conn.connOpend();
+
+    QSqlQuery* qry = new QSqlQuery(conn.m_database);
+    QString currentItem;
+
+    currentItem = ui->ItemPurchaseCombox->currentText();
+
+    //selects the list in the data base
+    qry->prepare("select * from dailySalesReport where item= ?");
+    qry->addBindValue(currentItem);
+
+    // error message if the item can't be added due to the data base
+    if(qry->exec())
     {
-       QMessageBox::warning(this, "Warning", "Please enter an item");
+        while(qry->next()){
+            QMessageBox::about(this, "", "The daily report is printed, double check if error occured");
+
+            //Tranfers data from Querry to model
+            modal->setQuery(*qry);
+
+            //data base customers get viewed on the ui table view
+            ui->tableView->setModel(modal);
+
+            //closes connention to data base
+            conn.connClose();
+            //counts rows from the model
+            qDebug() <<(modal->rowCount());
+        }
     }
     else
     {
-       showTotalPurchasesTable(databaseObj.ShowInfoForOneItem(itemName));
+        QMessageBox::about(this, "Error", "Database not found double check path to database");
     }
+
 }
+
+
 
 void totalPurchase::on_enterNamePushBtn_clicked()
 {
-    QString memberName = ui->IDcomBox->currentText();
-    if(memberName == "")
+    DBManager conn;
+
+    QSqlQueryModel * modal = new QSqlQueryModel();
+
+    //if fails to connect to data base
+    if(!conn.connOpend()){
+        qDebug() << "Error: AllDailyReport connection with database failed ";
+        return;
+    }
+
+    //Opens connection to to database
+    conn.connOpend();
+
+    QSqlQuery* qry = new QSqlQuery(conn.m_database);
+    QString currentID;
+
+    currentID = ui->IDcomBox->currentText();
+
+    //selects the list in the data base
+    qry->prepare("select * from dailySalesReport where ID= ?");
+    qry->addBindValue(currentID);
+
+    // error message if the item can't be added due to the data base
+    if(qry->exec())
     {
-       QMessageBox::warning(this, "Warning", "Please enter a name");
+        while(qry->next()){
+            QMessageBox::about(this, "", "The daily report is printed, double check if error occured");
+
+            //Tranfers data from Querry to model
+            modal->setQuery(*qry);
+
+            //data base customers get viewed on the ui table view
+            ui->tableView->setModel(modal);
+
+            //closes connention to data base
+            conn.connClose();
+            //counts rows from the model
+            qDebug() <<(modal->rowCount());
+        }
     }
     else
     {
-       showTotalPurchasesTable(databaseObj.ShowInfoForOneMember(memberName));
+        QMessageBox::about(this, "Error", "Database not found double check path to database");
     }
 }
 
+double totalPurchase::getTotalPurchase(QString date)
+{
+    double totalpurchase = 0;
+    QSqlQuery qry;
+
+    if(date == "")
+    {
+        qry.prepare("select printf(\"%.2f\",sum(price * quantity)) from dailySalesReport;");
+        qry.exec();
+        if(qry.next())
+        {
+            totalpurchase = qry.value(0).toDouble();
+        }
+    }
+    else
+    {
+        qry.prepare("select printf(\"%.2f\", sum(price * quantity)) from dailySalesReport where purchaseDate = \""+date+"\";");
+        qry.exec();
+        if(qry.next())
+        {
+            totalpurchase = qry.value(0).toDouble();
+        }
+    }
+    return totalpurchase;
+}
+
+void totalPurchase::showTotalPurchase()
+{
+
+    QString totalpurchaseString = "2486.43";
+    string to_string (double totalpurchaseString);
+
+    ui->purchaseLine->setText("$"+totalpurchaseString);
+
+}
 
